@@ -5,4 +5,3 @@ for (let i = 0; i < 256; i++) {
     div.className = 'item';
     container.appendChild(div);
 }
-
