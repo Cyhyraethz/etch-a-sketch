@@ -39,7 +39,7 @@ function resetGrid() {
   for (let i = 0; i < totalSquares; i++) {
     let div = document.createElement('div');
     div.setAttribute('onmouseover', 'changeColor(this)');
-    div.className = 'item';
+    div.className = 0;
     container.appendChild(div);
   }
 }
