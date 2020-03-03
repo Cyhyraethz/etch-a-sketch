@@ -5,19 +5,22 @@ function createGrid() {
   for (let i = 0; i < 256; i++) {
     let div = document.createElement('div');
     div.setAttribute('onmouseover', 'changeColor(this)');
-    div.className = 'item';
+    div.className = 0;
     container.appendChild(div);
   }
 }
 
 function changeColor(e) {
-  let red = Math.random() * 256;
-  let blue = Math.random() * 256;
-  let green = Math.random() * 256;
-  e.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`;
-  setTimeout(function() {
-    e.style.backgroundColor = 'blue';
-  }, 1000);
+  let num = parseInt(e.className, 10);
+  e.className = num + 1;
+  let lightness = 50;
+  if (parseInt(e.className, 10) < 10) {
+    num = parseInt(e.className, 10) * 5;
+    lightness = lightness - num;
+  } else if (parseInt(e.className, 10) >= 10) {
+    lightness = 0;
+  }
+  e.style.backgroundColor = `hsl(240, 100%, ${lightness}%)`;
 }
 
 function resetGrid() {
