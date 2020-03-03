@@ -11,9 +11,12 @@ function createGrid() {
 }
 
 function changeColor(e) {
-  e.id = 'newColor';
+  let red = Math.random() * 256;
+  let blue = Math.random() * 256;
+  let green = Math.random() * 256;
+  e.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`;
   setTimeout(function() {
-    e.removeAttribute('id');
+    e.style.backgroundColor = 'blue';
   }, 1000);
 }
 
